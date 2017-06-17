@@ -3,12 +3,15 @@ public class Game {
   private String answer;
   private String hits;
   private String misses;
+ 
   
   public Game(String answer){
    this.answer = answer; 
    hits = "";
     misses = "";
   }
+
+
   public String getAnswer(){
   return answer;
   }
@@ -28,7 +31,8 @@ public class Game {
     }
       return applyGuess(letters.charAt(0));
     }
-  public boolean applyGuess(char letter){
+
+    public boolean applyGuess(char letter){
     letter = normalizeGuess(letter);
    boolean isHit = answer.indexOf(letter) != -1;
   if(isHit){
