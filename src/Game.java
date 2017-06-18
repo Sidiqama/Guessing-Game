@@ -15,6 +15,7 @@ public class Game {
   public String getAnswer(){
   return answer;
   }
+ 
   private char normalizeGuess(char letter){
    if(! Character.isLetter(letter)){
    throw new IllegalArgumentException("A letter is required!");
@@ -44,7 +45,8 @@ public class Game {
   
   }
   public int getRemainingTries(){
-  return MAX_MISSES - misses.length();
+  
+	  return MAX_MISSES + 1 - misses.length();
   }
   public String getCurrentProgress(){
    String progress = "";

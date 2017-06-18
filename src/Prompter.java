@@ -7,12 +7,28 @@ public class Prompter {
   public Prompter(Game game){
   this.game = game;
   }
-public void promptForName(){
-	  System.out.println("What is your name?");
+public boolean promptForName(){
+	boolean isName = false;
+	boolean trueName = false;
+	do{
+	System.out.println("What is your name?");
+	System.out.print("Name :");
 	  String nameInput = scanner.nextLine();
-	 System.out.printf("welcome to the Hangman Game %s %n%n",nameInput);
+	  try{
+	  isName = game.applyGuess(nameInput);
+	  trueName = true;
+	  }catch (IllegalArgumentException iae){
+		  System.out.printf("%s, Please try again.%n",
+				            iae.getMessage());
+	  }
+	  } while(!trueName);
+	 System.out.printf("Welcome to the game . I hope you enjoy it :) %n%n");
+	 
+	 return isName;
+	}
+	  
 	
-}
+
   public boolean promptForGuess(){
   
   boolean isHit = false;
