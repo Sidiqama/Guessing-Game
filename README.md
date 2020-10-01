@@ -1,2 +1,2 @@
 # Hangman-Game
-Simple hangman game created using java programming language
+Simple hangman game by using java programming language
